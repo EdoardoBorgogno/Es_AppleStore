@@ -22,3 +22,4 @@ C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\bi
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\bin\Debug\LiveCharts.WinForms.xml
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Components.Home.Home_Components.ChartOrders.resources
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Components.Home.Home_Components.analyticsMonth.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Registry.Registry.resources

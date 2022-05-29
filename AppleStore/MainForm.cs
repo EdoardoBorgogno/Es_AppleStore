@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppleStore.Screens.Registry;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -30,7 +31,9 @@ namespace AppleStore
         //Form Load
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
+            //First screen is HOME
+            panelUserControl.Controls.Add(new Home());
+            panelUserControl.Controls[0].Name = "Home";
         }
 
         #region Drag Form
@@ -72,6 +75,32 @@ namespace AppleStore
         {
             Application.Exit();
         }
+
+        //Home btn click
+        private void panelLeft_homeButton_Click(object sender, EventArgs e)
+        {
+            if (panelUserControl.Controls.Find("Home", true) != null)
+            {
+                panelUserControl.Controls.Clear();
+                panelUserControl.Controls.Add(new Home());
+
+                selectionPanel.Location = new Point(0, panelLeft_homeButton.Location.Y);
+            }
+        }
+
+        //Registry btn click
+        private void panelLeft_registryButton_Click(object sender, EventArgs e)
+        {
+            if (panelUserControl.Controls.Find("Registry", true) != null)
+            {
+                panelUserControl.Controls.Clear();
+                panelUserControl.Controls.Add(new Registry());
+                panelUserControl.Controls[0].Name = "Registry";
+
+                selectionPanel.Location = new Point(0, panelLeft_registryButton.Location.Y);
+            }
+        }
+        
         #endregion
     }
 }

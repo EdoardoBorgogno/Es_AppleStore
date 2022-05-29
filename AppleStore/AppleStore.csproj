@@ -62,24 +62,32 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\Home\Home Components\analyticsMonth.cs">
+    <Compile Include="Models\Customers.cs" />
+    <Compile Include="Models\Products.cs" />
+    <Compile Include="Screens\Home\Home Components\analyticsMonth.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\Home\Home Components\analyticsMonth.Designer.cs">
+    <Compile Include="Screens\Home\Home Components\analyticsMonth.Designer.cs">
       <DependentUpon>analyticsMonth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Home\Home Components\ChartOrders.cs">
+    <Compile Include="Screens\Home\Home Components\ChartOrders.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\Home\Home Components\ChartOrders.Designer.cs">
+    <Compile Include="Screens\Home\Home Components\ChartOrders.Designer.cs">
       <DependentUpon>ChartOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\RevenueForMonth.cs" />
-    <Compile Include="Services\Database\adoNetSQL.cs" />
-    <Compile Include="Components\Home\Home.cs">
+    <Compile Include="Screens\Registry\Registry.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\Home\Home.Designer.cs">
+    <Compile Include="Screens\Registry\Registry.Designer.cs">
+      <DependentUpon>Registry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Database\adoNetSQL.cs" />
+    <Compile Include="Screens\Home\Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Home\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -90,13 +98,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Components\Home\Home Components\analyticsMonth.resx">
+    <EmbeddedResource Include="Screens\Home\Home Components\analyticsMonth.resx">
       <DependentUpon>analyticsMonth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Home\Home Components\ChartOrders.resx">
+    <EmbeddedResource Include="Screens\Home\Home Components\ChartOrders.resx">
       <DependentUpon>ChartOrders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Home\Home.resx">
+    <EmbeddedResource Include="Screens\Home\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
@@ -112,6 +120,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Screens\Registry\Registry.resx">
+      <DependentUpon>Registry.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Configurations\App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -176,6 +187,12 @@
     <Content Include="Images\Mac_category_image.jpg" />
     <Content Include="Images\TV&amp;Home_category_image.jpg" />
     <Content Include="Images\Watch_category_image.jpg" />
+    <None Include="Resources\more.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\orders_box.png" />
+    <None Include="Resources\growth.png" />
+    <None Include="Resources\degrowth.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

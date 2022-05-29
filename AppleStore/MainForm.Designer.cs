@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.leftPanel = new System.Windows.Forms.Panel();
+            this.selectionPanel = new System.Windows.Forms.Panel();
             this.panelLeft_appleImage = new System.Windows.Forms.PictureBox();
             this.leftPanel_bottomContainer = new System.Windows.Forms.Panel();
             this.leftPanel_bottomContainer_button = new System.Windows.Forms.Button();
@@ -44,7 +45,7 @@
             this.panelTop_btnReport = new AppleStore.RoundButton();
             this.panelTop_btnConnection = new AppleStore.RoundButton();
             this.panelTop_btnProduct = new AppleStore.RoundButton();
-            this.home1 = new AppleStore.Home();
+            this.panelUserControl = new System.Windows.Forms.Panel();
             this.leftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelLeft_appleImage)).BeginInit();
             this.leftPanel_bottomContainer.SuspendLayout();
@@ -55,6 +56,7 @@
             // leftPanel
             // 
             this.leftPanel.BackColor = System.Drawing.Color.White;
+            this.leftPanel.Controls.Add(this.selectionPanel);
             this.leftPanel.Controls.Add(this.panelLeft_appleImage);
             this.leftPanel.Controls.Add(this.leftPanel_bottomContainer);
             this.leftPanel.Controls.Add(this.panelLeft_dashboardButton);
@@ -66,6 +68,14 @@
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(225, 650);
             this.leftPanel.TabIndex = 0;
+            // 
+            // selectionPanel
+            // 
+            this.selectionPanel.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.selectionPanel.Location = new System.Drawing.Point(0, 175);
+            this.selectionPanel.Name = "selectionPanel";
+            this.selectionPanel.Size = new System.Drawing.Size(5, 41);
+            this.selectionPanel.TabIndex = 7;
             // 
             // panelLeft_appleImage
             // 
@@ -174,6 +184,7 @@
             this.panelLeft_registryButton.TabIndex = 1;
             this.panelLeft_registryButton.Text = "             Anagrafica";
             this.panelLeft_registryButton.UseVisualStyleBackColor = true;
+            this.panelLeft_registryButton.Click += new System.EventHandler(this.panelLeft_registryButton_Click);
             // 
             // panelLeft_homeButton
             // 
@@ -192,6 +203,7 @@
             this.panelLeft_homeButton.TabIndex = 0;
             this.panelLeft_homeButton.Text = "             Home";
             this.panelLeft_homeButton.UseVisualStyleBackColor = true;
+            this.panelLeft_homeButton.Click += new System.EventHandler(this.panelLeft_homeButton_Click);
             // 
             // topPanel
             // 
@@ -264,13 +276,12 @@
             this.panelTop_btnProduct.TabIndex = 2;
             this.panelTop_btnProduct.UseVisualStyleBackColor = false;
             // 
-            // home1
+            // panelUserControl
             // 
-            this.home1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.home1.Location = new System.Drawing.Point(225, 52);
-            this.home1.Name = "home1";
-            this.home1.Size = new System.Drawing.Size(784, 597);
-            this.home1.TabIndex = 2;
+            this.panelUserControl.Location = new System.Drawing.Point(225, 53);
+            this.panelUserControl.Name = "panelUserControl";
+            this.panelUserControl.Size = new System.Drawing.Size(784, 597);
+            this.panelUserControl.TabIndex = 2;
             // 
             // MainForm
             // 
@@ -278,7 +289,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1010, 650);
-            this.Controls.Add(this.home1);
+            this.Controls.Add(this.panelUserControl);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.leftPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -313,7 +324,8 @@
         private RoundButton panelTop_btnConnection;
         private RoundButton panelTop_btnProduct;
         private System.Windows.Forms.Label exitBtn;
-        private Home home1;
+        private System.Windows.Forms.Panel panelUserControl;
+        private System.Windows.Forms.Panel selectionPanel;
     }
 }
 
