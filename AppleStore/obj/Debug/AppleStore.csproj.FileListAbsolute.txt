@@ -22,4 +22,9 @@ C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\bi
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\bin\Debug\LiveCharts.WinForms.xml
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Components.Home.Home_Components.ChartOrders.resources
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Components.Home.Home_Components.analyticsMonth.resources
-C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Registry.Registry.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Add_Screens.AddCustomers.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Registry.RegistryScreen.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Edit_Screens.EditCustomer.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Add_Screens.AddCategories.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Edit_Screens.EditCategories.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Edit_Screens.EditProduct.resources

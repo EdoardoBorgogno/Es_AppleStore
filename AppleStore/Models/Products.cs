@@ -172,6 +172,63 @@ namespace AppleStore.Models
             return productsList;
         }
 
+        //Delete Product
+        public void DeleteProduct(int id)
+        {
+            //Get path of database
+            string pathDB = ConfigurationManager.AppSettings["appStartupPath"] + "\\" + "Applestore.mdf";
+
+            //Create adoNetSQL object
+            adoNetSQL adoNetSQL = new adoNetSQL(pathDB);
+
+            //Create query
+            string sql = "UPDATE Prodotti SET Eliminato = 1 WHERE IdProdotto = " + id;
+
+            //Execute query
+            adoNetSQL.eseguiNonQuery(sql, CommandType.Text);
+        }
+
+        //get product from id
+        public void GetProductFromId(int id)
+        {
+            //Get path of database
+            string pathDB = ConfigurationManager.AppSettings["appStartupPath"] + "\\" + "Applestore.mdf";
+
+            //Create adoNetSQL object
+            adoNetSQL adoNetSQL = new adoNetSQL(pathDB);
+
+            //Create query
+            string sql = "SELECT IdProdotto, IdCategoria, NomeProdotto, DescrizioneProdotto, DescrizioneLunga, ImmagineProdotto, PrezzoProdotto FROM Prodotti WHERE IdProdotto = " + id;
+
+            //Execute query
+            DataTable dt = adoNetSQL.eseguiQuery(sql, CommandType.Text);
+
+            Id = Convert.ToInt32(dt.Rows[0][0]);
+            Category = Convert.ToInt32(dt.Rows[0][1]);
+            Name = dt.Rows[0][2].ToString();
+            Description = dt.Rows[0][3].ToString();
+            JsonDescription = dt.Rows[0][4].ToString();
+            Image = dt.Rows[0][5].ToString();
+            Price = Convert.ToDouble(dt.Rows[0][6]);
+            
+        }
+
+        //Edit product
+        public void EditProduct(int id)
+        {
+            //Get path of database
+            string pathDB = ConfigurationManager.AppSettings["appStartupPath"] + "\\" + "Applestore.mdf";
+
+            //Create adoNetSQL object
+            adoNetSQL adoNetSQL = new adoNetSQL(pathDB);
+
+            //Create query
+            string sql = "UPDATE Prodotti SET IdCategoria = " + category + ", NomeProdotto = '" + name + "', DescrizioneProdotto = '" + description + "', DescrizioneLunga = '" + jsonDescription + "', ImmagineProdotto = '" + image + "', PrezzoProdotto = " + price + " WHERE IdProdotto = " + id;
+
+            //Execute query
+            adoNetSQL.eseguiNonQuery(sql, CommandType.Text);
+        }
+
         //Get list for datagrid
         public DataTable GetProductsForDataGrid()
         {
@@ -182,7 +239,7 @@ namespace AppleStore.Models
             adoNetSQL adoNetSQL = new adoNetSQL(pathDB);
 
             //Create query
-            string sql = "SELECT nomeProdotto as Nome, nomeCategoria as Categoria, prezzoProdotto as Prezzo FROM Prodotti INNER JOIN Categorie ON Categorie.IdCategoria = Prodotti.IdCategoria";
+            string sql = "SELECT IdProdotto as Id, nomeProdotto as Nome, nomeCategoria as Categoria, prezzoProdotto as Prezzo FROM Prodotti INNER JOIN Categorie ON Categorie.IdCategoria = Prodotti.IdCategoria WHERE Eliminato = 0";
 
             //Execute query
             DataTable products = adoNetSQL.eseguiQuery(sql, CommandType.Text);

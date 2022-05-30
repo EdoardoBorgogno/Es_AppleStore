@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AppleStore.Models
 {
@@ -38,9 +39,8 @@ namespace AppleStore.Models
         public string State { get => state; set => state = value; }
 
         //Constructor with parameters
-        public Customers(int idCustomer, string name, string surname, string phone, string email, string sex, DateTime dateBirth, string city, string address, string state)
+        public Customers(string name, string surname, string phone, string email, string sex, DateTime dateBirth, string city, string address, string state)
         {
-            this.idCustomer = idCustomer;
             this.name = name;
             this.surname = surname;
             this.phone = phone;
@@ -58,6 +58,21 @@ namespace AppleStore.Models
             
         }
 
+        //Constructor with parameters and id
+        public Customers(int idCustomer, string name, string surname, string phone, string email, string sex, DateTime dateBirth, string city, string address, string state)
+        {
+            IdCustomer = idCustomer;
+            Name = name;
+            Surname = surname;
+            Phone = phone;
+            Email = email;
+            Sex = sex;
+            DateBirth = dateBirth;
+            City = city;
+            Address = address;
+            State = state;
+        }
+
         //Get list of all customers
         public List<Customers> GetAllCustomers()
         {
@@ -68,7 +83,7 @@ namespace AppleStore.Models
             adoNetSQL adoNetSQL = new adoNetSQL(pathDB);
 
             //Create query
-            string sql = "SELECT * FROM Clienti";
+            string sql = "SELECT * FROM Clienti WHERE Eliminato = 1";
 
             //Execute query
             DataTable dt = adoNetSQL.eseguiQuery(sql, CommandType.Text);
@@ -96,6 +111,84 @@ namespace AppleStore.Models
             return customersList;
         }
 
+        //Add customer
+        public void AddCustomer()
+        {
+            //Get path of database
+            string pathDB = ConfigurationManager.AppSettings["appStartupPath"] + "\\" + "Applestore.mdf";
+
+            //Create adoNetSQL object
+            adoNetSQL adoNetSQL = new adoNetSQL(pathDB);
+
+            //Create query
+            string sql = @"INSERT INTO Clienti (nomeCliente, cognomeCliente, telefonoCliente, emailCliente, genereCliente, DataNascitaCliente, CittaCliente, IndirizzoCliente, StatoCliente) " +
+                         "VALUES ('" + name + "', '" + surname + "', '" + phone + "', '" + email + "', '" + sex + "', '" + dateBirth.ToString("yyyy/MM/dd") + "', '" + city + "', '" + address + "', '" + state + "')";
+            
+            try
+            {
+                adoNetSQL.eseguiQuery(sql, CommandType.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Errore nell'inserimento dati cliente");
+            }
+        }
+
+        //Delete customer
+        public void deleteCustomer(int idCustomer)
+        {
+            //Get path of database
+            string pathDB = ConfigurationManager.AppSettings["appStartupPath"] + "\\" + "Applestore.mdf";
+
+            //Create adoNetSQL object
+            adoNetSQL adoNetSQL = new adoNetSQL(pathDB);
+
+            //Create query
+            string sql = @"UPDATE Clienti SET Eliminato = 1 WHERE IdCliente = " + idCustomer;
+
+            try
+            {
+                adoNetSQL.eseguiQuery(sql, CommandType.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Errore nella cancellazione cliente");
+            }
+        }
+
+        //Get customers from id
+        public void getCustomerFromId(int idCustomer)
+        {
+            // Get path of database
+            string pathDB = ConfigurationManager.AppSettings["appStartupPath"] + "\\" + "Applestore.mdf";
+
+            //Create adoNetSQL object
+            adoNetSQL adoNetSQL = new adoNetSQL(pathDB);
+
+            //Create query
+            string sql = @"SELECT * FROM Clienti WHERE IdCliente = " + idCustomer;
+
+            try
+            {
+                DataTable dt = adoNetSQL.eseguiQuery(sql, CommandType.Text);
+
+                IdCustomer = Convert.ToInt32(dt.Rows[0].ItemArray[0]);
+                Name = dt.Rows[0].ItemArray[1].ToString();
+                Surname = dt.Rows[0].ItemArray[2].ToString();
+                Email = dt.Rows[0].ItemArray[3].ToString();
+                Phone = dt.Rows[0].ItemArray[4].ToString();
+                Sex = dt.Rows[0].ItemArray[5].ToString();
+                DateBirth = Convert.ToDateTime(dt.Rows[0].ItemArray[6]);
+                City = dt.Rows[0].ItemArray[7].ToString();
+                State = dt.Rows[0].ItemArray[8].ToString();
+                Address = dt.Rows[0].ItemArray[9].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Errore");
+            }
+        }
+
         //Get list for datagrid
         public DataTable GetCustomersForDataGrid()
         {
@@ -106,12 +199,38 @@ namespace AppleStore.Models
             adoNetSQL adoNetSQL = new adoNetSQL(pathDB);
 
             //Create query
-            string sql = "SELECT nomeCliente as Nome, cognomeCliente as Cognome, emailCliente as Email FROM Clienti";
+            string sql = "SELECT IdCliente as Id, nomeCliente as Nome, cognomeCliente as Cognome, emailCliente as Email FROM Clienti WHERE Eliminato = 0";
 
             //Execute query
             DataTable customers = adoNetSQL.eseguiQuery(sql, CommandType.Text);
 
             return customers;
+        }
+    
+        //Edit customers
+        public void editCustomers(int idCustomer)
+        {
+            // Get path of database
+            string pathDB = ConfigurationManager.AppSettings["appStartupPath"] + "\\" + "Applestore.mdf";
+
+            //Create adoNetSQL object
+            adoNetSQL adoNetSQL = new adoNetSQL(pathDB);
+
+            //Create query
+            string sql = @"UPDATE Clienti 
+                         SET nomeCliente = '" + name + "', cognomeCliente = '" + surname + "'," +
+                         "telefonoCliente = '" + phone + "', emailCliente = '" + email + "', genereCliente = '" + sex + 
+                         "', DataNascitaCliente = '" + dateBirth.ToString("yyyy/MM/dd") + "', CittaCliente = '" + city + "', StatoCliente = '" + state + "', IndirizzoCliente = '" + address + "' " +
+                         "WHERE IdCliente = " + idCustomer + ";";
+
+            try
+            {
+                adoNetSQL.eseguiQuery(sql, CommandType.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Errore");
+            }
         }
     }
 }

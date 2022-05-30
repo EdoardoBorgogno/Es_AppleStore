@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppleStore.Screens.Registry;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -86,5 +87,12 @@ namespace AppleStore
         }
 
         #endregion
+
+        //On click go to Registry
+        private void Home_ManageData_button_Click(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            this.Controls.Add(new RegistryScreen());
+        }
     }
 }

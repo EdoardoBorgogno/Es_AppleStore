@@ -94,7 +94,7 @@ namespace AppleStore
             if (panelUserControl.Controls.Find("Registry", true) != null)
             {
                 panelUserControl.Controls.Clear();
-                panelUserControl.Controls.Add(new Registry());
+                panelUserControl.Controls.Add(new RegistryScreen());
                 panelUserControl.Controls[0].Name = "Registry";
 
                 selectionPanel.Location = new Point(0, panelLeft_registryButton.Location.Y);

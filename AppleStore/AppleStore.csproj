@@ -62,8 +62,39 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\Customers.cs" />
     <Compile Include="Models\Products.cs" />
+    <Compile Include="Screens\Add Screens\AddCategories.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Add Screens\AddCategories.Designer.cs">
+      <DependentUpon>AddCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Add Screens\AddCustomers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Add Screens\AddCustomers.Designer.cs">
+      <DependentUpon>AddCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Edit Screens\EditCategories.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Edit Screens\EditCategories.Designer.cs">
+      <DependentUpon>EditCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Edit Screens\EditCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Edit Screens\EditCustomer.Designer.cs">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Edit Screens\EditProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Edit Screens\EditProduct.Designer.cs">
+      <DependentUpon>EditProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Home\Home Components\analyticsMonth.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -77,11 +108,11 @@
       <DependentUpon>ChartOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\RevenueForMonth.cs" />
-    <Compile Include="Screens\Registry\Registry.cs">
+    <Compile Include="Screens\Registry\RegistryScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Registry\Registry.Designer.cs">
-      <DependentUpon>Registry.cs</DependentUpon>
+    <Compile Include="Screens\Registry\RegistryScreen.Designer.cs">
+      <DependentUpon>RegistryScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\Database\adoNetSQL.cs" />
     <Compile Include="Screens\Home\Home.cs">
@@ -98,6 +129,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Screens\Add Screens\AddCategories.resx">
+      <DependentUpon>AddCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Add Screens\AddCustomers.resx">
+      <DependentUpon>AddCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Edit Screens\EditCategories.resx">
+      <DependentUpon>EditCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Edit Screens\EditCustomer.resx">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Edit Screens\EditProduct.resx">
+      <DependentUpon>EditProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Home\Home Components\analyticsMonth.resx">
       <DependentUpon>analyticsMonth.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,8 +166,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Screens\Registry\Registry.resx">
-      <DependentUpon>Registry.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Registry\RegistryScreen.resx">
+      <DependentUpon>RegistryScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Configurations\App.config" />
     <None Include="packages.config" />
@@ -187,6 +233,8 @@
     <Content Include="Images\Mac_category_image.jpg" />
     <Content Include="Images\TV&amp;Home_category_image.jpg" />
     <Content Include="Images\Watch_category_image.jpg" />
+    <None Include="Images\ipadPro19.9.jpg" />
+    <None Include="Images\ipadMini.jpg" />
     <None Include="Resources\more.png" />
     <None Include="Resources\delete.png" />
     <None Include="Resources\edit.png" />

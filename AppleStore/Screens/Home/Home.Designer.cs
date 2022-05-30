@@ -46,8 +46,8 @@
             this.Home_ManageData_button = new System.Windows.Forms.Button();
             this.Home_ManageData_title = new System.Windows.Forms.Label();
             this.panelOrders = new System.Windows.Forms.Panel();
-            this.panelOrders_picture = new System.Windows.Forms.PictureBox();
             this.panelOrders_button = new System.Windows.Forms.Button();
+            this.panelOrders_picture = new System.Windows.Forms.PictureBox();
             this.Home_toPanel_products.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Home_toPanel_products_image)).BeginInit();
             this.Home_toPanel_orders.SuspendLayout();
@@ -224,6 +224,7 @@
             this.Home_ManageData_button.TabIndex = 4;
             this.Home_ManageData_button.Text = "Gestisci";
             this.Home_ManageData_button.UseVisualStyleBackColor = true;
+            this.Home_ManageData_button.Click += new System.EventHandler(this.Home_ManageData_button_Click);
             // 
             // Home_ManageData_title
             // 
@@ -246,17 +247,6 @@
             this.panelOrders.Size = new System.Drawing.Size(186, 170);
             this.panelOrders.TabIndex = 9;
             // 
-            // panelOrders_picture
-            // 
-            this.panelOrders_picture.BackColor = System.Drawing.Color.Transparent;
-            this.panelOrders_picture.Image = global::AppleStore.Properties.Resources.orders_box;
-            this.panelOrders_picture.Location = new System.Drawing.Point(27, 3);
-            this.panelOrders_picture.Name = "panelOrders_picture";
-            this.panelOrders_picture.Size = new System.Drawing.Size(130, 110);
-            this.panelOrders_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.panelOrders_picture.TabIndex = 0;
-            this.panelOrders_picture.TabStop = false;
-            // 
             // panelOrders_button
             // 
             this.panelOrders_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -267,6 +257,17 @@
             this.panelOrders_button.TabIndex = 5;
             this.panelOrders_button.Text = "Vai alle vendite";
             this.panelOrders_button.UseVisualStyleBackColor = true;
+            // 
+            // panelOrders_picture
+            // 
+            this.panelOrders_picture.BackColor = System.Drawing.Color.Transparent;
+            this.panelOrders_picture.Image = global::AppleStore.Properties.Resources.orders_box;
+            this.panelOrders_picture.Location = new System.Drawing.Point(27, 3);
+            this.panelOrders_picture.Name = "panelOrders_picture";
+            this.panelOrders_picture.Size = new System.Drawing.Size(130, 110);
+            this.panelOrders_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.panelOrders_picture.TabIndex = 0;
+            this.panelOrders_picture.TabStop = false;
             // 
             // Home
             // 
