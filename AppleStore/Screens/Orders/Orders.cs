@@ -149,5 +149,10 @@ namespace AppleStore.Screens.Orders
             this.Controls.Clear();
             this.Controls.Add(new AddOrder());
         }
+
+        private void invoicesPanel_button_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Non disponiamo di Office");
+        }
     }
 }

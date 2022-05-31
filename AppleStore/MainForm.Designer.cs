@@ -109,6 +109,7 @@
             this.leftPanel_bottomContainer_button.TabIndex = 2;
             this.leftPanel_bottomContainer_button.Text = "Vai ai Report";
             this.leftPanel_bottomContainer_button.UseVisualStyleBackColor = true;
+            this.leftPanel_bottomContainer_button.Click += new System.EventHandler(this.leftPanel_bottomContainer_button_Click);
             // 
             // leftPanel_bottomContainer_title
             // 
@@ -148,6 +149,7 @@
             this.panelLeft_dashboardButton.TabIndex = 4;
             this.panelLeft_dashboardButton.Text = "            Dashboard";
             this.panelLeft_dashboardButton.UseVisualStyleBackColor = true;
+            this.panelLeft_dashboardButton.Click += new System.EventHandler(this.panelLeft_dashboardButton_Click);
             // 
             // panelLeft_salesButton
             // 
@@ -248,6 +250,7 @@
             this.panelTop_btnReport.Size = new System.Drawing.Size(44, 39);
             this.panelTop_btnReport.TabIndex = 4;
             this.panelTop_btnReport.UseVisualStyleBackColor = false;
+            this.panelTop_btnReport.Click += new System.EventHandler(this.panelTop_btnReport_Click);
             // 
             // panelTop_btnConnection
             // 

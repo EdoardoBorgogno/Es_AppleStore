@@ -1,6 +1,6 @@
 ﻿namespace AppleStore.Components.Home.Home_Components
 {
-    partial class ChartOrders
+    partial class ChartOrdersYear
     {
         /// <summary> 
         /// Variabile di progettazione necessaria.

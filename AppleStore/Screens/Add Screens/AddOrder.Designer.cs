@@ -33,15 +33,15 @@
             this.lblCustomers = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.cmbCustomers = new System.Windows.Forms.ComboBox();
-            this.dateBirth = new System.Windows.Forms.DateTimePicker();
+            this.dateOrder = new System.Windows.Forms.DateTimePicker();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panelSummary = new System.Windows.Forms.Panel();
+            this.addItemButton = new System.Windows.Forms.Button();
             this.summary_totalPanel = new System.Windows.Forms.Panel();
             this.summary_totalPanel_price = new System.Windows.Forms.Label();
             this.summary_totalPanel_title = new System.Windows.Forms.Label();
             this.SummaryDetailPanel = new System.Windows.Forms.Panel();
             this.lblSummaryTitle = new System.Windows.Forms.Label();
-            this.addItemButton = new System.Windows.Forms.Button();
             this.panelSummary.SuspendLayout();
             this.summary_totalPanel.SuspendLayout();
             this.SuspendLayout();
@@ -102,15 +102,15 @@
             this.cmbCustomers.Size = new System.Drawing.Size(252, 33);
             this.cmbCustomers.TabIndex = 59;
             // 
-            // dateBirth
+            // dateOrder
             // 
-            this.dateBirth.CalendarFont = new System.Drawing.Font("Dubai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateBirth.CalendarTitleBackColor = System.Drawing.Color.MediumSlateBlue;
-            this.dateBirth.Font = new System.Drawing.Font("Dubai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateBirth.Location = new System.Drawing.Point(46, 273);
-            this.dateBirth.Name = "dateBirth";
-            this.dateBirth.Size = new System.Drawing.Size(252, 36);
-            this.dateBirth.TabIndex = 60;
+            this.dateOrder.CalendarFont = new System.Drawing.Font("Dubai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateOrder.CalendarTitleBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.dateOrder.Font = new System.Drawing.Font("Dubai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateOrder.Location = new System.Drawing.Point(46, 273);
+            this.dateOrder.Name = "dateOrder";
+            this.dateOrder.Size = new System.Drawing.Size(252, 36);
+            this.dateOrder.TabIndex = 60;
             // 
             // btnAdd
             // 
@@ -123,6 +123,7 @@
             this.btnAdd.TabIndex = 61;
             this.btnAdd.Text = "Aggiunge Ordine";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panelSummary
             // 
@@ -135,6 +136,22 @@
             this.panelSummary.Name = "panelSummary";
             this.panelSummary.Size = new System.Drawing.Size(283, 434);
             this.panelSummary.TabIndex = 62;
+            // 
+            // addItemButton
+            // 
+            this.addItemButton.FlatAppearance.BorderSize = 0;
+            this.addItemButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.addItemButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.addItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addItemButton.Font = new System.Drawing.Font("Dubai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addItemButton.ForeColor = System.Drawing.Color.LimeGreen;
+            this.addItemButton.Location = new System.Drawing.Point(161, 78);
+            this.addItemButton.Name = "addItemButton";
+            this.addItemButton.Size = new System.Drawing.Size(102, 34);
+            this.addItemButton.TabIndex = 60;
+            this.addItemButton.Text = "Aggiungi";
+            this.addItemButton.UseVisualStyleBackColor = true;
+            this.addItemButton.Click += new System.EventHandler(this.addItemButton_Click);
             // 
             // summary_totalPanel
             // 
@@ -175,6 +192,7 @@
             this.SummaryDetailPanel.Name = "SummaryDetailPanel";
             this.SummaryDetailPanel.Size = new System.Drawing.Size(240, 225);
             this.SummaryDetailPanel.TabIndex = 58;
+            this.SummaryDetailPanel.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.SummaryDetailPanel_ControlRemoved);
             // 
             // lblSummaryTitle
             // 
@@ -187,22 +205,6 @@
             this.lblSummaryTitle.TabIndex = 57;
             this.lblSummaryTitle.Text = "Dettagli Ordine";
             // 
-            // addItemButton
-            // 
-            this.addItemButton.FlatAppearance.BorderSize = 0;
-            this.addItemButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.addItemButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.addItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addItemButton.Font = new System.Drawing.Font("Dubai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addItemButton.ForeColor = System.Drawing.Color.LimeGreen;
-            this.addItemButton.Location = new System.Drawing.Point(161, 78);
-            this.addItemButton.Name = "addItemButton";
-            this.addItemButton.Size = new System.Drawing.Size(102, 34);
-            this.addItemButton.TabIndex = 60;
-            this.addItemButton.Text = "Aggiungi";
-            this.addItemButton.UseVisualStyleBackColor = true;
-            this.addItemButton.Click += new System.EventHandler(this.addItemButton_Click);
-            // 
             // AddOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -210,7 +212,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.panelSummary);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dateBirth);
+            this.Controls.Add(this.dateOrder);
             this.Controls.Add(this.cmbCustomers);
             this.Controls.Add(this.lblCustomers);
             this.Controls.Add(this.lblDate);
@@ -236,7 +238,7 @@
         private System.Windows.Forms.Label lblCustomers;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.ComboBox cmbCustomers;
-        private System.Windows.Forms.DateTimePicker dateBirth;
+        private System.Windows.Forms.DateTimePicker dateOrder;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panelSummary;
         private System.Windows.Forms.Panel summary_totalPanel;

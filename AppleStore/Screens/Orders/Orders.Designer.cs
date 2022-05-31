@@ -190,6 +190,7 @@
             this.invoicesPanel_button.TabIndex = 20;
             this.invoicesPanel_button.Text = "Vedi le tue fatture";
             this.invoicesPanel_button.UseVisualStyleBackColor = true;
+            this.invoicesPanel_button.Click += new System.EventHandler(this.invoicesPanel_button_Click);
             // 
             // invocesPanel_title
             // 
@@ -375,7 +376,7 @@
             this.Controls.Add(this.lblTitle_TopPanel);
             this.Controls.Add(this.separator1);
             this.Name = "Orders";
-            this.Size = new System.Drawing.Size(739, 529);
+            this.Size = new System.Drawing.Size(718, 508);
             this.Load += new System.EventHandler(this.Orders_Load);
             this.topPanel_TotalOrders.ResumeLayout(false);
             this.topPanel_TotalOrders.PerformLayout();

@@ -20,7 +20,6 @@ C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\bi
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\bin\Debug\LiveCharts.WinForms.dll
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\bin\Debug\LiveCharts.WinForms.pdb
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\bin\Debug\LiveCharts.WinForms.xml
-C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Components.Home.Home_Components.ChartOrders.resources
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Components.Home.Home_Components.analyticsMonth.resources
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Add_Screens.AddCustomers.resources
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Registry.RegistryScreen.resources
@@ -37,3 +36,7 @@ C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\ob
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Add_Screens.AddOrder.resources
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Forms.SelectProductForm.resources
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Add_Screens.Add_Screens_Component.ProductOrder.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Dashboard.Dashboard.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Dashboard.TopItem.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Dashboard.Dashboard_Components.ChartYear.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Components.Home.Home_Components.ChartOrdersYear.resources

@@ -18,12 +18,15 @@ namespace AppleStore.Screens.Add_Screens.Add_Screens_Component
     {
         int productID;
 
+        //Property
+        public int ProductID { get => productID; set => productID = value; }
+
         //Product Order Constructor
         public ProductOrder(int productIdparam)
         {
             InitializeComponent();
 
-            productID = productIdparam;
+            ProductID = productIdparam;
         }
 
         //On load
@@ -36,7 +39,7 @@ namespace AppleStore.Screens.Add_Screens.Add_Screens_Component
             adoNetSQL adoNetSQL = new adoNetSQL(pathDB);
 
             //Create query
-            string sql = "SELECT * FROM Prodotti WHERE IdProdotto = " + productID;
+            string sql = "SELECT * FROM Prodotti WHERE IdProdotto = " + ProductID;
 
             //Execute query
             DataTable dt = adoNetSQL.eseguiQuery(sql, CommandType.Text);
@@ -50,6 +53,13 @@ namespace AppleStore.Screens.Add_Screens.Add_Screens_Component
             //Set product image
             detailProductPicture.ImageLocation = @"..\..\Images\" + dt.Rows[0]["ImmagineProdotto"].ToString();
 
+        }
+
+        //On delete Button
+        private void delete_Click(object sender, EventArgs e)
+        {
+            this.Tag = productID;
+            this.Dispose();
         }
     }
 }

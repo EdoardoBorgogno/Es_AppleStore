@@ -1,4 +1,5 @@
-﻿using AppleStore.Screens.Orders;
+﻿using AppleStore.Screens.Dashboard;
+using AppleStore.Screens.Orders;
 using AppleStore.Screens.Registry;
 using System;
 using System.Collections.Generic;
@@ -118,6 +119,20 @@ namespace AppleStore
             }
         }
 
+        //Go to dashboard
+        private void panelLeft_dashboardButton_Click(object sender, EventArgs e)
+        {
+            if (panelUserControl.Controls.Find("Dashboard", true) != null)
+            {
+                panelUserControl.Controls.Clear();
+                panelUserControl.Controls.Add(new Dashboard());
+                panelUserControl.Controls[0].Name = "Dashboard";
+                panelUserControl.Controls[0].Dock = DockStyle.Fill;
+
+                selectionPanel.Location = new Point(0, panelLeft_dashboardButton.Location.Y);
+            }
+        }
+
         //Go to sales
         private void panelTop_btnProduct_Click(object sender, EventArgs e)
         {
@@ -128,6 +143,18 @@ namespace AppleStore
         private void panelTop_btnConnection_Click(object sender, EventArgs e)
         {
             OpenUrl("https://www.apple.com/");
+        }
+
+        //Go to dashboard
+        private void panelTop_btnReport_Click(object sender, EventArgs e)
+        {
+            panelLeft_dashboardButton_Click(this, e);
+        }
+
+        //Go to dashboard
+        private void leftPanel_bottomContainer_button_Click(object sender, EventArgs e)
+        {
+            panelLeft_dashboardButton_Click(this, e);
         }
 
         #endregion

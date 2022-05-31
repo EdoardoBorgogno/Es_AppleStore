@@ -14,13 +14,13 @@ using System.Configuration;
 
 namespace AppleStore.Components.Home.Home_Components
 {
-    public partial class ChartOrders : UserControl
+    public partial class ChartOrdersYear : UserControl
     {
         //
         // Chart for revenue during time
         //
 
-        public ChartOrders()
+        public ChartOrdersYear()
         {
             InitializeComponent();
         }

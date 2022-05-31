@@ -101,6 +101,24 @@
     <Compile Include="Screens\Add Screens\AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Dashboard\Dashboard Components\ChartYear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Dashboard\Dashboard Components\ChartYear.Designer.cs">
+      <DependentUpon>ChartYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Dashboard\Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Dashboard\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Dashboard\Dashboard Components\TopItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Dashboard\Dashboard Components\TopItem.Designer.cs">
+      <DependentUpon>TopItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Edit Screens\EditCategories.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -200,6 +218,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Add Screens\AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Dashboard\Dashboard Components\ChartYear.resx">
+      <DependentUpon>ChartYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Dashboard\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Dashboard\Dashboard Components\TopItem.resx">
+      <DependentUpon>TopItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Edit Screens\EditCategories.resx">
       <DependentUpon>EditCategories.cs</DependentUpon>

@@ -40,7 +40,7 @@
             this.Home_toPanel_customers_image = new System.Windows.Forms.PictureBox();
             this.Home_toPanel_customers_numOfCustomers = new System.Windows.Forms.Label();
             this.Home_toPanel_customers_title = new System.Windows.Forms.Label();
-            this.chartOrders1 = new AppleStore.Components.Home.Home_Components.ChartOrders();
+            this.chartOrders1 = new AppleStore.Components.Home.Home_Components.ChartOrdersYear();
             this.analyticsMonth1 = new AppleStore.Components.Home.Home_Components.analyticsMonth();
             this.Home_ManageData = new System.Windows.Forms.Panel();
             this.Home_ManageData_button = new System.Windows.Forms.Button();
@@ -316,7 +316,7 @@
         private System.Windows.Forms.Label Home_toPanel_orders_numOfOrders;
         private System.Windows.Forms.Label Home_toPanel_orders_title;
         private System.Windows.Forms.PictureBox Home_toPanel_orders_image;
-        private Components.Home.Home_Components.ChartOrders chartOrders1;
+        private Components.Home.Home_Components.ChartOrdersYear chartOrders1;
         private Components.Home.Home_Components.analyticsMonth analyticsMonth1;
         private System.Windows.Forms.Panel Home_ManageData;
         private System.Windows.Forms.Label Home_ManageData_title;

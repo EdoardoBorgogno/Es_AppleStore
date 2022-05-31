@@ -96,13 +96,14 @@ namespace AppleStore.Models
             set 
             {
                 //Image must be less than 50 characters
+                string imageStr;
 
                 if (value.Length > 50)
                 {
-                    throw new ArgumentException("Image must be less than 50 characters");
+                    imageStr = value.Substring(0, 20) + value.Split('.').Last();
                 }
-
-                image = value;
+                else
+                    image = value;
             }
         }
         public decimal Price { 
