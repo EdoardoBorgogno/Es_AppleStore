@@ -24,11 +24,14 @@ namespace AppleStore.Screens.Edit_Screens
         {
             InitializeComponent();
 
+            //Get and set customer id
             idCustomers = id;
 
+            //Get customer
             Customers customers = new Customers();
             customers.getCustomerFromId(id);
 
+            //Set textbox values
             txtName.Text = customers.Name;
             txtSurname.Text = customers.Surname;
             txtEmail.Text = customers.Email;
@@ -49,8 +52,10 @@ namespace AppleStore.Screens.Edit_Screens
         //On edit button
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            //Create new customer
             Customers customers = new Customers();
 
+            //Set customer properties
             customers.Name = txtName.Text;
             customers.Surname = txtSurname.Text;
             customers.Email = txtEmail.Text;
@@ -61,8 +66,10 @@ namespace AppleStore.Screens.Edit_Screens
             customers.DateBirth = dateBirth.Value;
             customers.Sex = cmbSex.SelectedItem.ToString();
 
+            //Edit customer
             customers.editCustomers(idCustomers);
 
+            //Return to registry
             this.Controls.Clear();
             this.Controls.Add(new RegistryScreen());
         }

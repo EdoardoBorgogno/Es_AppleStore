@@ -12,8 +12,12 @@ using System.Windows.Forms;
 
 namespace AppleStore.Screens.Add_Screens
 {
+    //
+    // Add Categories screen
+    //
     public partial class AddCategories : UserControl
     {
+        //Constructor
         public AddCategories()
         {
             InitializeComponent();
@@ -25,13 +29,19 @@ namespace AppleStore.Screens.Add_Screens
             //if fields are filled
             if (txtName.Text != "" && txtRich.Text != "")
             {
+                //create new category
                 Categories category = new Categories();
-                
+
+                //set category name
                 category.CategoryName = txtName.Text;
+
+                //set category description
                 category.Description = txtRich.Text;
 
+                //add category to database
                 category.addCategory();
 
+                //return to registry
                 this.Controls.Clear();
                 this.Controls.Add(new RegistryScreen());
             }

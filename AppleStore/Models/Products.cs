@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace AppleStore.Models
         private string description;
         private string jsonDescription;
         private string image;
-        private double price;
+        private decimal price;
 
         //Properties
         public int Id 
@@ -104,7 +105,7 @@ namespace AppleStore.Models
                 image = value;
             }
         }
-        public double Price { 
+        public decimal Price { 
             get => price; 
             set
             {
@@ -120,7 +121,7 @@ namespace AppleStore.Models
         }
 
         // Constructor with parameters
-        public Product(int id, int category, string name, string description, string jsonDescription, string image, double price)
+        public Product(int id, int category, string name, string description, string jsonDescription, string image, decimal price)
         {
             this.id = id;
             this.category = category;
@@ -165,11 +166,27 @@ namespace AppleStore.Models
                     row.Field<string>("DescrizioneProdotto"),
                     row.Field<string>("DescrizioneLunga"),
                     row.Field<string>("ImmagineProdotto"),
-                    row.Field<double>("PrezzoProdotto")
+                    row.Field<decimal>("PrezzoProdotto")
                 ));
             }
 
             return productsList;
+        }
+
+        //Add Product
+        public void AddProduct()
+        {
+            //Get path of database
+            string pathDB = ConfigurationManager.AppSettings["appStartupPath"] + "\\" + "Applestore.mdf";
+
+            //Create adoNetSQL object
+            adoNetSQL adoNetSQL = new adoNetSQL(pathDB);
+
+            //Create query
+            string sql = "INSERT INTO Prodotti (IdCategoria, NomeProdotto, DescrizioneProdotto, DescrizioneLunga, ImmagineProdotto, PrezzoProdotto) VALUES (" + category + ", '" + name + "', '" + description + "', '" + jsonDescription + "', '" + image + "', " + Price.ToString().Replace(',', '.') + ")";
+
+            //Execute query
+            adoNetSQL.eseguiNonQuery(sql, CommandType.Text);
         }
 
         //Delete Product
@@ -209,7 +226,7 @@ namespace AppleStore.Models
             Description = dt.Rows[0][3].ToString();
             JsonDescription = dt.Rows[0][4].ToString();
             Image = dt.Rows[0][5].ToString();
-            Price = Convert.ToDouble(dt.Rows[0][6]);
+            Price = Convert.ToDecimal(dt.Rows[0][6]);
             
         }
 
@@ -223,8 +240,8 @@ namespace AppleStore.Models
             adoNetSQL adoNetSQL = new adoNetSQL(pathDB);
 
             //Create query
-            string sql = "UPDATE Prodotti SET IdCategoria = " + category + ", NomeProdotto = '" + name + "', DescrizioneProdotto = '" + description + "', DescrizioneLunga = '" + jsonDescription + "', ImmagineProdotto = '" + image + "', PrezzoProdotto = " + price + " WHERE IdProdotto = " + id;
-
+            string sql = "UPDATE Prodotti SET IdCategoria = " + category + ", NomeProdotto = '" + name + "', DescrizioneProdotto = '" + description + "', DescrizioneLunga = '" + jsonDescription + "', ImmagineProdotto = '" + image + "', PrezzoProdotto = " + Price.ToString().Replace(',', '.') + " WHERE IdProdotto = " + id;
+            
             //Execute query
             adoNetSQL.eseguiNonQuery(sql, CommandType.Text);
         }

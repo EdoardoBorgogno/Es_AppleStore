@@ -62,9 +62,21 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\SelectProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectProductForm.Designer.cs">
+      <DependentUpon>SelectProductForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\Customers.cs" />
     <Compile Include="Models\Products.cs" />
+    <Compile Include="Screens\Add Screens\Add Screens Component\ProductOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Add Screens\Add Screens Component\ProductOrder.Designer.cs">
+      <DependentUpon>ProductOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Add Screens\AddCategories.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -76,6 +88,18 @@
     </Compile>
     <Compile Include="Screens\Add Screens\AddCustomers.Designer.cs">
       <DependentUpon>AddCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Add Screens\AddOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Add Screens\AddOrder.Designer.cs">
+      <DependentUpon>AddOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Add Screens\AddProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Add Screens\AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Edit Screens\EditCategories.cs">
       <SubType>UserControl</SubType>
@@ -108,11 +132,41 @@
       <DependentUpon>ChartOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\RevenueForMonth.cs" />
+    <Compile Include="Screens\Orders\Orders Components\bestProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Orders\Orders Components\bestProduct.Designer.cs">
+      <DependentUpon>bestProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Orders\Orders Components\ChartOrdersForMonth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Orders\Orders Components\ChartOrdersForMonth.Designer.cs">
+      <DependentUpon>ChartOrdersForMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Orders\Orders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Orders\Orders.Designer.cs">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Registry\RegistryScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Screens\Registry\RegistryScreen.Designer.cs">
       <DependentUpon>RegistryScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\View Order\View Order Component\OrderDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\View Order\View Order Component\OrderDetail.Designer.cs">
+      <DependentUpon>OrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\View Order\ViewOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\View Order\ViewOrder.Designer.cs">
+      <DependentUpon>ViewOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\Database\adoNetSQL.cs" />
     <Compile Include="Screens\Home\Home.cs">
@@ -129,11 +183,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\SelectProductForm.resx">
+      <DependentUpon>SelectProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Add Screens\Add Screens Component\ProductOrder.resx">
+      <DependentUpon>ProductOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Add Screens\AddCategories.resx">
       <DependentUpon>AddCategories.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Add Screens\AddCustomers.resx">
       <DependentUpon>AddCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Add Screens\AddOrder.resx">
+      <DependentUpon>AddOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Add Screens\AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Edit Screens\EditCategories.resx">
       <DependentUpon>EditCategories.cs</DependentUpon>
@@ -166,8 +232,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Screens\Orders\Orders Components\bestProduct.resx">
+      <DependentUpon>bestProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Orders\Orders Components\ChartOrdersForMonth.resx">
+      <DependentUpon>ChartOrdersForMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Orders\Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Registry\RegistryScreen.resx">
       <DependentUpon>RegistryScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\View Order\View Order Component\OrderDetail.resx">
+      <DependentUpon>OrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\View Order\ViewOrder.resx">
+      <DependentUpon>ViewOrder.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Configurations\App.config" />
     <None Include="packages.config" />
@@ -233,6 +314,11 @@
     <Content Include="Images\Mac_category_image.jpg" />
     <Content Include="Images\TV&amp;Home_category_image.jpg" />
     <Content Include="Images\Watch_category_image.jpg" />
+    <None Include="Resources\view.png" />
+    <None Include="Resources\online-money-donation.png" />
+    <None Include="Resources\empty-states-5 %281%29.png" />
+    <None Include="Resources\empty-states-5.png" />
+    <None Include="Resources\business-360.png" />
     <None Include="Images\ipadPro19.9.jpg" />
     <None Include="Images\ipadMini.jpg" />
     <None Include="Resources\more.png" />
@@ -242,5 +328,6 @@
     <None Include="Resources\growth.png" />
     <None Include="Resources\degrowth.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

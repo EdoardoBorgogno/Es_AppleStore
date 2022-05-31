@@ -28,3 +28,12 @@ C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\ob
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Add_Screens.AddCategories.resources
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Edit_Screens.EditCategories.resources
 C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Edit_Screens.EditProduct.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Add_Screens.AddProduct.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Orders.Orders.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Orders.Orders_Components.ChartOrdersForMonth.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Orders.Orders_Components.bestProduct.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.View_Order.ViewOrder.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.View_Order.View_Order_Component.OrderDetail.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Add_Screens.AddOrder.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Forms.SelectProductForm.resources
+C:\Users\eborg\OneDrive\Desktop\scuola\quarta\info\PCTO\AppleStore\AppleStore\obj\Debug\AppleStore.Screens.Add_Screens.Add_Screens_Component.ProductOrder.resources

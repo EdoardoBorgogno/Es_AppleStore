@@ -17,7 +17,7 @@ namespace AppleStore.Components.Home.Home_Components
     public partial class ChartOrders : UserControl
     {
         //
-        // Chart for orders during time
+        // Chart for revenue during time
         //
 
         public ChartOrders()
@@ -98,7 +98,7 @@ namespace AppleStore.Components.Home.Home_Components
                     LineSmoothness = 0,
                     Fill = System.Windows.Media.Brushes.Transparent,
                     Stroke = System.Windows.Media.Brushes.Gold,
-                    Title = "Totale:",
+                    Title = "Guadagno: ",
                 }
             };
 

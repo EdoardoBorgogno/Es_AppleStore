@@ -257,6 +257,7 @@
             this.panelOrders_button.TabIndex = 5;
             this.panelOrders_button.Text = "Vai alle vendite";
             this.panelOrders_button.UseVisualStyleBackColor = true;
+            this.panelOrders_button.Click += new System.EventHandler(this.panelOrders_button_Click);
             // 
             // panelOrders_picture
             // 

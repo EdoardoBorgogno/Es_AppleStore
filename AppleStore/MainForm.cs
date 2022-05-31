@@ -1,11 +1,14 @@
-﻿using AppleStore.Screens.Registry;
+﻿using AppleStore.Screens.Orders;
+using AppleStore.Screens.Registry;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -89,7 +92,7 @@ namespace AppleStore
         }
 
         //Registry btn click
-        private void panelLeft_registryButton_Click(object sender, EventArgs e)
+        public void panelLeft_registryButton_Click(object sender, EventArgs e)
         {
             if (panelUserControl.Controls.Find("Registry", true) != null)
             {
@@ -100,7 +103,62 @@ namespace AppleStore
                 selectionPanel.Location = new Point(0, panelLeft_registryButton.Location.Y);
             }
         }
-        
+
+        //Orders btn click
+        public void panelLeft_salesButton_Click(object sender, EventArgs e)
+        {
+            if (panelUserControl.Controls.Find("Orders", true) != null)
+            {
+                panelUserControl.Controls.Clear();
+                panelUserControl.Controls.Add(new Orders());
+                panelUserControl.Controls[0].Name = "Orders";
+                panelUserControl.Controls[0].Dock = DockStyle.Fill;
+
+                selectionPanel.Location = new Point(0, panelLeft_salesButton.Location.Y);
+            }
+        }
+
+        //Go to sales
+        private void panelTop_btnProduct_Click(object sender, EventArgs e)
+        {
+            panelLeft_salesButton_Click(this, e);
+        }
+
+        //Open apple site
+        private void panelTop_btnConnection_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://www.apple.com/");
+        }
+
         #endregion
+
+        //Open url
+        private void OpenUrl(string url)
+        {
+            try
+            {
+                Process.Start(url);
+            }
+            catch
+            {
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    url = url.Replace("&", "^&");
+                    Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                {
+                    Process.Start("xdg-open", url);
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                {
+                    Process.Start("open", url);
+                }
+                else
+                {
+                    MessageBox.Show("Errore. Riprova!");
+                }
+            }
+        }
     }
 }

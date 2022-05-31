@@ -166,6 +166,7 @@
             this.panelLeft_salesButton.TabIndex = 3;
             this.panelLeft_salesButton.Text = "             Vendite      ";
             this.panelLeft_salesButton.UseVisualStyleBackColor = true;
+            this.panelLeft_salesButton.Click += new System.EventHandler(this.panelLeft_salesButton_Click);
             // 
             // panelLeft_registryButton
             // 
@@ -261,6 +262,7 @@
             this.panelTop_btnConnection.Size = new System.Drawing.Size(44, 39);
             this.panelTop_btnConnection.TabIndex = 3;
             this.panelTop_btnConnection.UseVisualStyleBackColor = false;
+            this.panelTop_btnConnection.Click += new System.EventHandler(this.panelTop_btnConnection_Click);
             // 
             // panelTop_btnProduct
             // 
@@ -275,6 +277,7 @@
             this.panelTop_btnProduct.Size = new System.Drawing.Size(44, 39);
             this.panelTop_btnProduct.TabIndex = 2;
             this.panelTop_btnProduct.UseVisualStyleBackColor = false;
+            this.panelTop_btnProduct.Click += new System.EventHandler(this.panelTop_btnProduct_Click);
             // 
             // panelUserControl
             // 

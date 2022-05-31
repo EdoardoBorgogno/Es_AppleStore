@@ -247,6 +247,9 @@ namespace AppleStore.Screens.Registry
                     this.Controls.Add(addCategories);
                     break;
                 case "products":
+                    AddProduct addProduct = new AddProduct();
+                    this.Controls.Clear();
+                    this.Controls.Add(addProduct);
                     break;
             }
         }

@@ -19,8 +19,10 @@ namespace AppleStore.Screens.Edit_Screens
         {
             InitializeComponent();
 
+            // Set idCategories
             idCategories = id;
-            
+
+            // Get categories properties
             Categories categories = new Categories();
 
             categories.GetCategoriesFromId(id);
@@ -32,13 +34,17 @@ namespace AppleStore.Screens.Edit_Screens
         //On edit button click
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            //New categories object
             Categories categories = new Categories();
 
+            //Set categories value
             categories.CategoryName = txtName.Text;
             categories.Description = txtRich.Text;
 
+            //Update categories
             categories.EditCategory(idCategories);
 
+            //Return to Registry
             this.Controls.Clear();
             this.Controls.Add(new RegistryScreen());
         }

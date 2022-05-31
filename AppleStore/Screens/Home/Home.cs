@@ -91,8 +91,15 @@ namespace AppleStore
         //On click go to Registry
         private void Home_ManageData_button_Click(object sender, EventArgs e)
         {
-            this.Controls.Clear();
-            this.Controls.Add(new RegistryScreen());
+            //call panelLeft_registryButton_Click in mainForm
+            ((MainForm)this.ParentForm).panelLeft_registryButton_Click(sender, e);
+        }
+
+        //On click go to Orders
+        private void panelOrders_button_Click(object sender, EventArgs e)
+        {
+            //call panelLeft_ordersButton in mainForm
+            ((MainForm)this.ParentForm).panelLeft_salesButton_Click(sender, e);
         }
     }
 }
